@@ -1,4 +1,3 @@
-
 from setuptools import setup, find_packages
 
 setup(
@@ -11,6 +10,9 @@ setup(
     entry_points={
         'console_scripts': [
             'quickcan-cli=cli.quickcan_cli:main',
+        ],
+        'can.interface': [
+            'quickcan=backend.quickcan_bus:QuickCANBus',
         ],
     },
 )
