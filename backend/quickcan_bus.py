@@ -20,6 +20,7 @@ class QuickCANBus(can.BusABC):
         self._interface.send(msg.arbitration_id, data, extended=msg.is_extended_id)
 
     def _on_frame_received(self, frame):
+        print("🎯 Decoded Frame:", frame)
         msg = can.Message(
             arbitration_id=frame.can_id,
             data=frame.data,
